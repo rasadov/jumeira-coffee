@@ -1,0 +1,33 @@
+[
+    {
+        "id": "1",
+        "name": "Товар 1",
+        "opican": "Состав",		
+        "price": "100",
+        "img": "img/cars/fon.png"
+    },
+    {
+        "id": "2",
+        "name": "Товар 2",
+        "price": "120",
+        "img": "img/cars/fon.png"
+    },
+    {
+        "id": "3",
+        "name": "Товар 3",
+        "price": "130",
+        "img": "img/cars/fon.png"
+    },
+    {
+        "id": "4",
+        "name": "Товар 4",
+        "price": "200",
+        "img": "img/cars/fon.png"
+    },
+    {
+        "id": "5",
+        "name": "Товар 5",
+        "price": "260",
+        "img": "img/cars/fon.png"
+    }
+]

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="fuzzy" />
+    <meta name="keywords" content="fuzzy" />
+    <meta name="author" content="fuzzy" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="assets/images/logo/favicon.png" type="image/x-icon" />
+    <title>fuzzy app</title>
+    <link rel="apple-touch-icon" href="assets/images/logo/favicon.png" />
+    <meta name="theme-color" content="#122636" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="fuzzy" />
+    <meta name="msapplication-TileImage" content="assets/images/logo/favicon.png" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+
+    <meta name="google" value="notranslate">
+	
+	
+   
+    <!--Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- iconsax css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors/iconsax.css" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" id="rtl-link" type="text/css" href="assets/css/vendors/bootstrap.min.css" />
+    <!-- Theme css -->
+    <link rel="stylesheet" id="change-link" type="text/css" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <!-- header start -->
+    <header class="section-t-space">
+      <div class="custom-container">
+        <div class="header-panel">
+          <a href="checkout.html">
+            <i class="iconsax back-btn" data-icon="arrow-left"></i>
+          </a>
+          <h3 id="adres">Адрес доставки</h3>
+        </div>
+      </div>
+    </header>
+    <!-- header end -->
+	
+	
+	
+	
+	
+	
+
+<p id="status"></p>
+<a id="map-link" target="_blank"></a>
+
+
+
+
+
+
+
+
+
+    <!-- address form section start -->
+    <section class="section-b-space">
+      <div class="custom-container">
+        <form class="address-form" target="_blank">
+          <div class="form-group">
+            <label class="form-label">Город</label>
+            <div class="form-input mb-3">
+              <input type="text" class="form-control"  id="gorod" placeholder="" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Улица</label>
+            <div class="form-input mb-3">
+              <input type="text" class="form-control"   id="ylica" placeholder="" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <label class="form-label">Дом №</label>
+                <div class="form-input mb-3">
+                  <input type="text" class="form-control"   id="dom"  placeholder="" />
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <label class="form-label">Этаж</label>
+                <div class="form-input mb-3">
+                  <input type="text" class="form-control"  id="yetazh"  placeholder="" />
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-6">
+              <div class="form-group">
+                <label class="form-label">Номер квартиры</label>
+                <div class="form-input mb-3">
+                  <input type="text" class="form-control"  id="nomer_kvartiry"  placeholder="" />
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <label class="form-label">Код от домофона</label>
+                <div class="form-input mb-3">
+                  <input type="text" class="form-control"  id="kod_domofona"  placeholder="" />
+                </div>
+              </div>
+            </div>
+			
+			
+            <div class="form-group">
+              <label class="form-label">Определено по GPS</label>
+              <ul class="address-type">
+                <li>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked />
+                    <label class="form-check-label" for="flexRadioDefault1"><p id="address"></p></label>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+          <!-- panel-space start -->
+          <section class="panel-space"></section>
+          <!-- panel-space end -->
+          <div class="footer-modal d-flex gap-3">
+            <a href="/" class="btn gray-btn btn-inline mt-0 w-50">Отмена</a>
+            <a  onclick="SaveAddress()" class="theme-btn btn btn-inline mt-0 w-50">Сохранить</a>
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- address form section start -->
+
+    <!-- iconsax js -->
+    <script src="assets/js/iconsax.js"></script>
+
+    <!-- bootstrap js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- script js -->
+    <script src="assets/js/script.js"></script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+	
+	
+
+	
+	
+		
+	
+
+<script>
+
+
+
+    
+
+
+
+
+
+
+  const status = document.querySelector("#address");
+  const mapLink = document.querySelector("#map-link");
+
+  mapLink.href = "";
+  mapLink.textContent = "";
+
+
+
+  function error() {
+    status.textContent = "Включите геолокацию. Невозможно получить ваше местоположение.";
+  }
+
+  if (!navigator.geolocation) {
+    status.textContent = "Geolocation не поддерживается вашим браузером";
+  } else {
+    status.textContent = "Определение местоположения…";
+    navigator.geolocation.getCurrentPosition(success, error);
+  }
+
+
+
+
+  function success(position) {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+
+
+  
+const xmlhttp = new XMLHttpRequest();
+xmlhttp.onload = function() {
+  const myObj = JSON.parse(this.responseText);
+
+    const address = myObj.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
+
+
+
+	document.getElementById("address").innerHTML = address;
+ 
+  
+	document.getElementById("gorod").value = myObj.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.Address.Components[4].name;
+	document.getElementById("ylica").value = myObj.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.Address.Components[5].name;
+	document.getElementById("dom").value = myObj.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.Address.Components[6].name;
+  
+
+
+}
+xmlhttp.open("GET", `https://geocode-maps.yandex.ru/1.x?apikey=97af45c5-0463-4ee8-95fd-9afb4be4d002&geocode=${longitude},${latitude}&format=json`);
+xmlhttp.send();
+
+  
+    }
+
+
+</script>
+	
+	
+	
+	
+	
+<script>
+
+
+
+    
+
+
+
+
+
+function SaveAddress()  {
+
+	// localStorage работает на локальном сервере 
+	
+	
+		const gorod =  document.getElementById("gorod").value;
+		const ylica =  document.getElementById("ylica").value;
+		const dom =  document.getElementById("dom").value;
+		const yetazh =  document.getElementById("yetazh").value;
+		const nomer_kvartiry = document.getElementById("nomer_kvartiry").value;
+		const kod_domofona =  document.getElementById("kod_domofona").value;
+
+
+		
+	window.localStorage.address_dostavki = gorod + ", Ул. " + ylica + " " + dom;
+
+	console.log(window.localStorage.address_dostavki); // 
+  
+	
+
+document.getElementById("adres").innerHTML = window.localStorage.address_dostavki;
+       
+
+history.go (-1); 
+location.reload();
+history.go (-1); 
+}
+
+
+</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  </body>
+</html>
